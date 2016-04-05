@@ -45,17 +45,6 @@ end
 
 # fibonacci routes
 
-get '/fibonacci/:n' do
-  #fibonacci(params['n'])
-  @n = params['n'].to_i
-  erb :fibonacci
-end
-
-get '/fibonacci' do
-  @n = params['term'].to_i
-  erb :fibonacci_query
-end
-
 get '/fib' do
   @n = params['term'].to_i
   erb :fib
