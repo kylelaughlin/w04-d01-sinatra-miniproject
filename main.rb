@@ -43,6 +43,30 @@ get '/triangle/:side_one/:side_two/:side_three' do
   end
 end
 
+# fibonacci routes
+
+get '/fibonacci/:n' do
+  "#{fibonacci(params['n'])}"
+end
+
+def fibonacci(n)
+  if params['n'] == 1
+    "1"
+  elsif params['n'] == 2
+    "1, 1"
+  else
+    fibonacci_numbers = [1,1]
+    i = 3
+    while i <= params['n']
+      two_back = fibonacci_numbers[i-3]
+      one_back = fibonacci_numbers[i-2]
+      next_fib = two_back + one_back
+      fibonacci_numbers << next_fib
+      i += 1
+    end
+  end
+  fibonacci_numbers.join(", ")
+end
 
 
 =begin
