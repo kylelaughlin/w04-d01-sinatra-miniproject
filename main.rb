@@ -44,15 +44,15 @@ get '/even-or-odd' do
 end
 
 # Valid Triangle
+get '/triangle' do
+  erb :triangle_form
+end
 
-get '/triangle/:side_one/:side_two/:side_three' do
-  if params['side_one'].to_i + params['side_two'].to_i > params['side_three'].to_i &&
-    params['side_one'].to_i + params['side_three'].to_i > params['side_two'].to_i &&
-    params['side_two'].to_i + params['side_three'].to_i > params['side_one'].to_i
-    "A triangle with lengts of #{params['side_one']}, #{params['side_two']}, and #{params['side_three']} is good."
-  else
-    "A triangle with lengts of #{params['side_one']}, #{params['side_two']}, and #{params['side_three']} is not good."
-  end
+get '/triangle/result' do
+  @a = params['a'].to_i
+  @b = params['b'].to_i
+  @c = params['c'].to_i
+  erb :triangle_result
 end
 
 def valid_triangle(a,b,c)
