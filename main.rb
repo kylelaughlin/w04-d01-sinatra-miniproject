@@ -46,30 +46,16 @@ end
 # fibonacci routes
 
 get '/fibonacci/:n' do
-  #{}"#{fibonacci(params['n'])}"
-  if params['n'].to_i == 1
-    "1"
-  elsif params['n'].to_i == 2
-    "1, 1"
-  else
-    fibonacci_numbers = [1,1]
-    i = 3
-    while i <= params['n'].to_i
-      two_back = fibonacci_numbers[i-3]
-      one_back = fibonacci_numbers[i-2]
-      next_fib = two_back + one_back
-      fibonacci_numbers << next_fib
-      i += 1
-    end
-    fibonacci_numbers.join(", ")
-  end
+  #fibonacci(params['n'])
+  @n = params['n'].to_i
+  erb :fibonacci
 end
 
 def fibonacci(n)
   if n.to_i == 1
-    "1"
+    fibonacci_numbers[1]
   elsif n.to_i == 2
-    "1, 1"
+    fibonacci_numbers[1, 1]
   else
     fibonacci_numbers = [1,1]
     i = 3
@@ -83,30 +69,3 @@ def fibonacci(n)
   end
   fibonacci_numbers.join(", ")
 end
-
-
-=begin
-
-get '/hello/:name' do
-  "Hello, #{params['name'].capitalize}"
-end
-
-get '/hello/:name/:greeting' do
-  "#{params['greeting']} #{params['name']}"
-end
-
-get '/letter-count/:word' do
-  binding.pry
-  "#{params['word']} has #{params['word'].length} letters"
-end
-
-# /letter-count-queries?word=ruby
-get '/letter-count-queries' do
-  binding.pry
-  if params['word']
-    "#{params['word']} has #{params['word'].length} letters"
-  else
-    "You gotta give us a word."
-  end
-end
-=end
