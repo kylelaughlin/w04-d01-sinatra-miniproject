@@ -5,8 +5,12 @@
   </head>
   <body>
     <h1>The Fibonacci Sequence - Out <%= @n %> terms:</h1>
-    <p1><%= fibonacci(@n) %></p1><br>
-    <a href="/fibonacci/<%=@n + 1%>">Add Another Term</a><br>
-    <a href="/fibonacci/<%=@n -1%>">Subtract A Term</a>
+    <p1><%= fibonacci(@n) %></p1><br><br>
+    <form action="/fibonacci/<%=@n + 1%>">
+      <input type="submit" value="Add Another Term">
+    </form>
+    <form action="/fibonacci/<%=@n - 1%>">
+      <input type="submit" value="Subtract Another Term">
+    </form>
   </body>
 </html>
