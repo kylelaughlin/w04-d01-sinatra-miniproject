@@ -57,9 +57,9 @@ end
 
 def valid_triangle(a,b,c)
   if a + b > c && a + c > b && b + c > a
-    "is good"
+    "is a valid"
   else
-    "is not good"
+    "is not a valid"
   end
 end
 
