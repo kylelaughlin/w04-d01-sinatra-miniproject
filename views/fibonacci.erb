@@ -4,6 +4,9 @@
     <title>Fibonacci</title>
   </head>
   <body>
-    <h1>The Fibonacci Sequence: Out <%= n %> terms</h1>
+    <h1>The Fibonacci Sequence - Out <%= @n %> terms:</h1>
+    <p1><%= fibonacci(@n) %></p1><br>
+    <a href="/fibonacci/<%=@n + 1%>">Add Another Term</a><br>
+    <a href="/fibonacci/<%=@n -1%>">Subtract A Term</a>
   </body>
 </html>

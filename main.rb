@@ -53,9 +53,9 @@ end
 
 def fibonacci(n)
   if n.to_i == 1
-    fibonacci_numbers[1]
+    fibonacci_numbers = [1]
   elsif n.to_i == 2
-    fibonacci_numbers[1, 1]
+    fibonacci_numbers = [1, 1]
   else
     fibonacci_numbers = [1,1]
     i = 3
