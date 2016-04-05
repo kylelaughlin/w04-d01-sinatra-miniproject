@@ -25,12 +25,19 @@ end
 
 #Even or odd
 
-get '/even-or-odd-b' do
+get '/even-or-odd/result' do
+  @num = params['num']
+  @result = ""
   if params['num'].to_i.even?
-    "#{params['num']} is even"
+    @result = "even"
   else
-    "#{params['num']} is odd"
+    @result = "odd"
   end
+  erb :even_or_odd_result
+end
+
+get '/even-or-odd' do
+  erb :even_or_odd_form
 end
 
 # Valid Triangle
