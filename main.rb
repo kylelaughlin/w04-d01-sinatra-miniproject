@@ -26,13 +26,14 @@ end
 #Even or odd
 
 get '/even-or-odd/result' do
-  @num = params['num']
+  @num = params['num'].to_i
   @result = ""
   if params['num'].to_i.even?
     @result = "even"
   else
     @result = "odd"
   end
+  binding.pry
   erb :even_or_odd_result
 end
 
