@@ -14,8 +14,8 @@ end
 
 #Shouted greeting query
 get '/shouted-greeting-b/result' do
-  @greeting = params['greeting']
-  @name = params['name']
+  @greeting = params['greeting'].upcase
+  @name = params['name'].upcase
   erb :shouted_greeting_result
 end
 
