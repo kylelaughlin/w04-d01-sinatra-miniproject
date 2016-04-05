@@ -46,18 +46,34 @@ end
 # fibonacci routes
 
 get '/fibonacci/:n' do
-  "#{fibonacci(params['n'])}"
-end
-
-def fibonacci(n)
-  if params['n'] == 1
+  #{}"#{fibonacci(params['n'])}"
+  if params['n'].to_i == 1
     "1"
-  elsif params['n'] == 2
+  elsif params['n'].to_i == 2
     "1, 1"
   else
     fibonacci_numbers = [1,1]
     i = 3
-    while i <= params['n']
+    while i <= params['n'].to_i
+      two_back = fibonacci_numbers[i-3]
+      one_back = fibonacci_numbers[i-2]
+      next_fib = two_back + one_back
+      fibonacci_numbers << next_fib
+      i += 1
+    end
+    fibonacci_numbers.join(", ")
+  end
+end
+
+def fibonacci(n)
+  if n.to_i == 1
+    "1"
+  elsif n.to_i == 2
+    "1, 1"
+  else
+    fibonacci_numbers = [1,1]
+    i = 3
+    while i <= n.to_i
       two_back = fibonacci_numbers[i-3]
       one_back = fibonacci_numbers[i-2]
       next_fib = two_back + one_back
