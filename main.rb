@@ -30,11 +30,12 @@ get '/even-or-odd/result' do
   erb :even_or_odd_result
 end
 
-def even_or_odd
+def even_or_odd(num)
   if num.even?
     "even"
   else
     "odd"
+  end
 end
 
 
