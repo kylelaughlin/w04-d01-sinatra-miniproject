@@ -51,6 +51,17 @@ get '/fibonacci/:n' do
   erb :fibonacci
 end
 
+get '/fibonacci' do
+  @n = params['term'].to_i
+  erb :fibonacci_query
+end
+
+get '/fib' do
+  @n = params['term'].to_i
+  erb :fib
+end
+
+
 def fibonacci(n)
   if n.to_i == 1
     fibonacci_numbers = [1]

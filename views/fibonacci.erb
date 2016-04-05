@@ -4,7 +4,7 @@
     <title>Fibonacci</title>
   </head>
   <body>
-    <h1>The Fibonacci Sequence - Out <%= @n %> terms:</h1>
+    <h1>The Fibonacci Sequence - <%= @n %> terms:</h1>
     <p1><%= fibonacci(@n) %></p1><br><br>
     <form action="/fibonacci/<%=@n + 1%>">
       <input type="submit" value="Add Another Term">
@@ -14,10 +14,9 @@
     </form>
     <br>
     <br>
-    <form action ="/fibonacci/">
+    <form action ="/fibonacci">
       To what term should we go?
-      <input type="text" name="term" value="#">
-      <!--<input type="submit" value="Submit">-->
+      <input type="text" name="term" value="">
     </form>
 
   </body>
