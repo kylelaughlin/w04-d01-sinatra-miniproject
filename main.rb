@@ -13,12 +13,20 @@ get '/shouted-greeting/howdy/:name' do
 end
 
 #Shouted greeting query
-get '/shouted-greeting-b' do
+get '/shouted-greeting-b/result' do
+  @greeting = params['greeting']
+  @name = params['name']
+  erb :shouted_greeting_result
+
   if params['greeting']
     "#{params['greeting'].upcase}, #{params['name'].upcase}"
   else
     "HELLO, #{params['name'].upcase}"
   end
+end
+
+get '/shouted-greeting-b' do
+  erb :shouted_greeting_form
 end
 
 #Even or odd
@@ -35,8 +43,8 @@ end
 
 get '/triangle/:side_one/:side_two/:side_three' do
   if params['side_one'].to_i + params['side_two'].to_i > params['side_three'].to_i &&
-     params['side_one'].to_i + params['side_three'].to_i > params['side_two'].to_i &&
-     params['side_two'].to_i + params['side_three'].to_i > params['side_one'].to_i
+    params['side_one'].to_i + params['side_three'].to_i > params['side_two'].to_i &&
+    params['side_two'].to_i + params['side_three'].to_i > params['side_one'].to_i
     "A triangle with lengts of #{params['side_one']}, #{params['side_two']}, and #{params['side_three']} is good."
   else
     "A triangle with lengts of #{params['side_one']}, #{params['side_two']}, and #{params['side_three']} is not good."
