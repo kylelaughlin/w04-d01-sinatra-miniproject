@@ -17,12 +17,6 @@ get '/shouted-greeting-b/result' do
   @greeting = params['greeting']
   @name = params['name']
   erb :shouted_greeting_result
-
-  if params['greeting']
-    "#{params['greeting'].upcase}, #{params['name'].upcase}"
-  else
-    "HELLO, #{params['name'].upcase}"
-  end
 end
 
 get '/shouted-greeting-b' do
