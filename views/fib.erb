@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fibonacci</title>
+  </head>
+  <body>
+    <h1>The Fibonacci Sequence - <%= @n %> terms:</h1>
+    <p1><%= fibonacci(@n) %></p1><br><br>
+    <form action="/fib">
+      <button name="term" type="submit" value="<%=@n + 1%>">Add One Term</button>
+    </form>
+    <form action="/fib">
+      <button name="term" type="submit" value="<%=@n - 1%>">Subtract One Term</button>
+    </form>
+    <br>
+    <br>
+    <form action ="/fib">
+      To what term should we go?
+      <input type="text" name="term" value="">
+    </form>
+
+  </body>
+</html>
