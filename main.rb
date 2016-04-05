@@ -55,6 +55,14 @@ get '/triangle/:side_one/:side_two/:side_three' do
   end
 end
 
+def valid_triangle(a,b,c)
+  if a + b > c && a + c > b && b + c > a
+    "is good"
+  else
+    "is not good"
+  end
+end
+
 # fibonacci routes
 
 get '/fib' do
