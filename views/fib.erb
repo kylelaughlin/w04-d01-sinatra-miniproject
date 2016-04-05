@@ -6,18 +6,18 @@
   <body>
     <h1>The Fibonacci Sequence - <%= @n %> terms:</h1>
     <p1><%= fibonacci(@n) %></p1><br><br>
-    <form action="/fib">
+    <form action="/fib" method="get">
       <button name="term" type="submit" value="<%=@n + 1%>">Add One Term</button>
     </form>
-    <form action="/fib">
+    <form action="/fib" method="get">
       <button name="term" type="submit" value="<%=@n - 1%>">Subtract One Term</button>
     </form>
     <br>
     <br>
-    <form action ="/fib">
+    <form action ="/fib" method="get">
       To what term should we go?
       <input type="text" name="term" value="">
+      <input type="submit" value="submit">
     </form>
-
   </body>
 </html>
